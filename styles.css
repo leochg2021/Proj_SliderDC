@@ -1,0 +1,185 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    background-color: #000;
+    color: #fff;
+    font-size: 15px;
+    overflow: hidden;
+}
+
+.img-header {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    filter: brightness(50%);
+}
+
+header {
+    width: 80%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: auto;
+    z-index: 2;
+}
+header a {
+    font-size: 16px;
+    color: #fff;
+    margin-right: 40px;
+    font-weight: 300;
+}
+.container {
+    height: 100vh;
+    width: 100%;
+    margin-top: -100px;
+    
+}
+.container .list .list-item {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.container .list .list-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+    filter: brightness(50%);
+}
+.container .list .list-item .content {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    padding-right: 30%;
+    width: 80%;
+    color: #fff;
+    text-shadow: 0 5px 15px #0004;
+}
+.container .list .list-item h1 {
+    font-size: 3em;
+    font-weight: 700;
+    line-height: 1.5em;
+}
+
+.container .list .list-item p {
+    font-size: 1.1em;
+}
+
+.container .list .list-item .buttons{
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: 40px;
+    margin-top: 20px;
+    gap: 10px;
+
+}
+.container .list .list-item .buttons button {
+    border: none;
+    background-color: #fff;
+    letter-spacing: 1px;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.container .list .list-item .buttons button:hover {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    transition: .5s;
+}
+
+
+.container .list .list-item .buttons button:nth-child(2) {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+.container .list .list-item .buttons button:nth-child(2):hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.container .thumb {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    display: flex;
+    gap: 20px;
+}
+
+.container .thumb .thumb-item {
+    width: 135px;
+    height: 200px;
+    position: relative;
+}
+
+.container .thumb .thumb-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    filter: brightness(70%);
+}
+
+.container .thumb .content {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.container .arrows {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    bottom: 120px;
+    left: 120px;
+    width: 300px;
+}
+
+.container .arrows button {
+    
+    border-radius: 10px;
+    border: none;
+    padding: 12px 17px;
+    background-color: #eee5;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+    font: 1.7em;
+}
+.container .arrows button:hover {
+    background-color: #fff;
+    color: #000;
+    transition: 0.7;
+}
+
+/*Movimento da thumb*/
+.container.next .thumb {
+    animation: effectNextThumb 0.5s linear 1 forwards;
+}
+
+@keyframes effectNextThumb {
+    from {
+        transform: translateX(150px);
+    }
+    
+}
+
+/*Movimento ultima thumb*/
+
+.container.next .thumb .thumb-item:nth-last-child(1){
+    animation: effectLastThumb 0.5s linear 1 forwards;
+}
+@keyframes effectLastThumb {
+    from {
+        width: 0;
+        opacity: 0;
+    }    
+}
